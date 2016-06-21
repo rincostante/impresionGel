@@ -16,7 +16,7 @@
                 <b:row>
                     <b:column span="12">
                         <h:form prependId="false" id="bt" >
-                            <b:commandButton actionListener="#{mbPdf.pdf(ActionEvent)}" value="PDF" look="primary" />
+                            <h:commandButton action="#{mbPdf.pdf()}" value="PDF" />
                         </h:form>
                         <br></br>
                         <b:dataTable id="dtAct" value="#{mbPdf.lstActividades}" var="act" 
