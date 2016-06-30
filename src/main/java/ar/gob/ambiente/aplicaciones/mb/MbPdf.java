@@ -51,14 +51,23 @@ public class MbPdf implements Serializable{
         //lstActividades = backendServ.getActividadAll();
         return lstActividades;
     }
-    
+     
     public void init() throws JRException{
-        JRBeanCollectionDataSource beanCollectionDataSource = new JRBeanCollectionDataSource(lstActividades);
-        jasperPrint =  JasperFillManager.fillReport("C:\\Users\\Administrador\\Desktop\\videoGEL\\pruebaActividades.jasper", new HashMap(), beanCollectionDataSource);
+
     }
     
     public void pdf() throws JRException, IOException{
+        JRBeanCollectionDataSource beanCollectionDataSource = new JRBeanCollectionDataSource(lstActividades);
+        String reportPath = FacesContext.getCurrentInstance().getExternalContext().getRealPath("/pruebaActividades.jasper");
+        jasperPrint =  JasperFillManager.fillReport(reportPath, new HashMap(), beanCollectionDataSource);
+        HttpServletResponse httpServletResponse = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
+        httpServletResponse.addHeader("Content-disposition", "attachment; filename=report.pdf");
+        ServletOutputStream servletOutputStream = httpServletResponse.getOutputStream();
         
+        JasperExportManager.exportReportToPdfStream(jasperPrint, servletOutputStream);
+        FacesContext.getCurrentInstance().responseComplete();
+        
+        /*
         FacesContext facesContext = FacesContext.getCurrentInstance(); //Get the context ONCE
         HttpServletResponse response = (HttpServletResponse)facesContext.getExternalContext().getResponse();
         
@@ -72,6 +81,7 @@ public class MbPdf implements Serializable{
 
             servletOutputStream.flush();
             servletOutputStream.close();
+        */
         /*
         try {
             ServletOutputStream servletOutputStream = response.getOutputStream();

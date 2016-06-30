@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pruebaActividades" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="522ca475-083b-49a0-843c-9e45cee73b9a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="5"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="187" splitType="Stretch">
+			<staticText>
+				<reportElement x="53" y="131" width="452" height="56" uuid="91e035d6-e0ed-49c5-b35c-44f219c51cd3"/>
+				<textElement textAlignment="Justified">
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[Primera Prueba Actividades]]></text>
+			</staticText>
+			<image>
+				<reportElement x="21" y="0" width="515" height="101" uuid="37a47792-10c5-4231-83f3-ba62524d4201"/>
+				<imageExpression><![CDATA["C:\\Users\\Administrador\\Desktop\\videoGEL\\Log_Presidencia_MinisterioAmbiente_103.gif"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="4" width="53" height="20" uuid="28f84ed9-2bbd-46a4-ac7e-a6e1a4b615c5"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="4" width="64" height="20" uuid="e491d0ab-c472-401a-b773-1c160b848774"/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="4" width="100" height="20" uuid="902dc028-bc9e-4ad0-8278-9c9324f77c27"/>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="53" height="20" uuid="bd3f4e35-efcd-47bd-ba01-a41064d68570"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="0" width="64" height="20" uuid="c0023add-b093-40ba-b3a3-558f2422655d"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="0" width="438" height="20" uuid="7edca908-d4f3-484a-ade5-b5ee8a7afd96"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="217" y="0" width="100" height="20" uuid="3e9093c9-35b2-4ca8-80d0-913de375376e"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
